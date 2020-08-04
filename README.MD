@@ -45,6 +45,8 @@ sameTypeOrNot --> sameType(类型一致) --> updateDOM(根据新的VDOM更新老
 returnNew(返回新节点) --> end1(结束)
 ```
 
+![](https://github.com/AngelPP52/dom-diff/blob/master/images/compareTwoVDOM.jpg)
+
 ### 根据新的VDOM更新老的真实DOM
 
 *注意一：调用组件的更新组件方法时，应该调用生命周期`componentWillReceiveProps`函数*
@@ -57,6 +59,8 @@ sameType --> normalType(普通节点) --> updateChildren(更新孩子) --> updat
 sameType --> componentType(组件节点) --> emitUpdate(调用组件的更新组件方法) -.-> render(重新渲染)
 ```
 
+![](https://github.com/AngelPP52/dom-diff/blob/master/images/updateElement.jpg)
+
 ### 更新孩子
 
 ```mermaid
@@ -65,3 +69,4 @@ start(开始) --> updateChildren(更新孩子)
 updateChildren --> arrayChildren(将新老孩子封装成数组形式) --> others(依次DOM-Diff新老节点) --> more(TODO...)
 ```
 
+![](https://github.com/AngelPP52/dom-diff/blob/master/images/updateChildren.jpg)
